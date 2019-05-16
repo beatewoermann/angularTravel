@@ -1,0 +1,14 @@
+<h2>Destination Cities</h2>
+<ul class="destinations">
+  <li *ngFor="let destination of destinations"
+    [class.selected]="destination === selectedCity"
+    (click)="onSelect(destination)">
+    <span class="badge">{{destination.id}}</span> {{destination.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedDestination">
+ 
+  <h2>You selected to go to: {{selectedDestination.name | uppercase}}</h2>
+  
+</div>

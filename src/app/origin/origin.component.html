@@ -1,0 +1,15 @@
+<h2>Start Cities</h2>
+<ul class="origins">
+  <li *ngFor="let origin of origins"
+    [class.selected]="origin === selectedOrigins"
+    (click)="onSelect(origin)">
+    <span class="badge">{{origin.id}}</span> {{origin.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedOrigin">
+ 
+  <h2>You selected to leave from: {{selectedOrigin.name | uppercase}}</h2>
+
+ 
+</div>
